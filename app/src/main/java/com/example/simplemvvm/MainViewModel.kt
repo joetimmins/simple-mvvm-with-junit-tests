@@ -28,9 +28,10 @@ class MainViewModel(
     }
 }
 
-class MainViewModelFactory : ViewModelProvider.Factory {
+class MainViewModelFactory(
+    private val initialState: MainUiState
+) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        val initialState = MainUiState(89)
         val viewModel = MainViewModel(initialState)
         return modelClass.cast(viewModel)!!
     }
