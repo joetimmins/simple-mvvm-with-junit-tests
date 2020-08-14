@@ -11,6 +11,11 @@ class MainViewModel(
     private val _uiState = MutableLiveData(initialState)
     val uiState = _uiState as LiveData<MainUiState>
 
+    fun addOne() {}
+
+    fun addTwo() {}
+
+    fun reset() {}
 }
 
 class MainViewModelFactory : ViewModelProvider.Factory {
