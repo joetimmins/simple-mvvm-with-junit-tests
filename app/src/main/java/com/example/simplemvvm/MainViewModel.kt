@@ -11,11 +11,21 @@ class MainViewModel(
     private val _uiState = MutableLiveData(initialState)
     val uiState = _uiState as LiveData<MainUiState>
 
-    fun addOne() {}
+    fun addOne() {
+        val current = _uiState.value ?: return
+        val updated = current.copy(total = current.total + 1)
+        _uiState.postValue(updated)
+    }
 
-    fun addTwo() {}
+    fun addTwo() {
+        val current = _uiState.value ?: return
+        val updated = current.copy(total = current.total + 2)
+        _uiState.postValue(updated)
+    }
 
-    fun reset() {}
+    fun reset() {
+        _uiState.postValue(initialState)
+    }
 }
 
 class MainViewModelFactory : ViewModelProvider.Factory {
