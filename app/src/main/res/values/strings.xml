@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Simple MVVM</string>
+    <string name="add_1">Add 1</string>
+    <string name="add_2">Add 2</string>
 </resources>
